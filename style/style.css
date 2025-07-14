@@ -1,0 +1,1447 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+
+.menu__btn {
+  display: block;
+  position: relative;
+  top: 0px;
+  right: 20px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #00BDF8;
+  transition-duration: 0.25s;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  z-index: 15;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: #FFFFFF;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+}
+.menu__box li button {
+  margin-left: 24px;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: #000000;
+  font-family: "Stem medium";
+  font-size: 15px;
+  color: #000000;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+  transition-duration: 0.25s;
+}
+
+.menu__item:hover {
+  background-color: #cfd8dc;
+}
+
+@font-face {
+  font-family: "Stem bold";
+  src: url(/fonts/EM-Stem/OTF/Stem-Bold.otf);
+}
+@font-face {
+  font-family: "Stem medium";
+  src: url(/fonts/EM-Stem/OTF/Stem-Medium.otf);
+}
+button {
+  background-color: #00BDF8;
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: none;
+  transition: 300ms ease-in;
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+button:hover {
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  border: none;
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #1a236e;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.call_back {
+  padding: 12px 24px;
+  background-color: #00BDF8;
+  font-family: "Stem medium";
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+  border-radius: 6px;
+  border: none;
+  transition: all ease-in 300ms;
+}
+.call_back:hover {
+  box-shadow: #00BDF8 0px 0px 20px 2px;
+  background-color: #00BDF8;
+  padding: 12px 24px !important;
+  font-family: "Stem medium";
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.custom-radio > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+header a img {
+  height: 70px;
+}
+header .navbar {
+  width: 890px;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+header .navbar a {
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #000000;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+  opacity: 0.7;
+  transition: all 300ms;
+}
+header .navbar a:hover {
+  opacity: 1;
+}
+header .navbar span {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  font-family: "Stem medium";
+  font-size: 15px;
+  color: #000000;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+}
+header .navbar span #phone {
+  opacity: 1;
+}
+header .navbar span strong {
+  font-family: "Stem medium";
+  font-size: 15px;
+  color: #00BDF8;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@media screen and (max-width: 1210px) {
+  header {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  header .navbar {
+    width: 750px;
+  }
+  header .navbar a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .navbar {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+    position: fixed;
+    right: 20px;
+    z-index: 20;
+  }
+}
+main {
+  width: 100%;
+}
+main .main_section {
+  position: relative;
+  width: 100%;
+  height: 790px;
+  background-image: url(../img/image.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .main_section .arrow {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+}
+main .main_section .back_drop_img {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(26, 35, 110, 0.5019607843);
+}
+main .main_section .main_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 382px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .main_section .main_content .main_text {
+  height: 222px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+main .main_section .main_content .main_text h1 {
+  font-family: "Stem bold";
+  font-size: 64px;
+  color: #FFFFFF;
+  line-height: 68px;
+  font-weight: 700;
+  font-style: normal;
+}
+main .main_section .main_content .main_text p {
+  text-align: center;
+  font-family: "Stem medium";
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 31.2px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .main_section .main_content .main_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .main_section .main_content .main_buttons .buttons .blue_btn {
+  margin-right: 16px;
+}
+main .main_section .main_content .main_buttons strong {
+  text-align: center;
+  font-family: "Stem medium";
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 20px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .second_section {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 50px;
+}
+main .third_section {
+  position: relative;
+  width: 100%;
+  height: 584px;
+  background-image: url(../img/second.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .third_section .back_drop_img2 {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(26, 35, 110, 0.5019607843);
+}
+main .third_section .about_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .third_section .about_text strong {
+  text-align: center;
+  margin-bottom: 16px;
+  font-family: "Stem bold";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 600;
+  font-style: normal;
+}
+main .third_section .about_text .about_title {
+  text-align: center;
+  font-family: "Stem bold";
+  font-size: 48px;
+  color: #FFFFFF;
+  line-height: 52px;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 16px;
+}
+main .third_section .about_text p {
+  margin-bottom: 32px;
+  text-align: center;
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+}
+main .fourth_section {
+  width: 100%;
+  height: 712px;
+  position: relative;
+}
+main .fourth_section .forth_tetxs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 77.1%;
+  height: 472px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .fourth_section .forth_tetxs strong {
+  font-family: "Stem medium";
+  font-size: 28px;
+  color: #00BDF8;
+  line-height: 36.4px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .fourth_section .forth_tetxs h2 {
+  text-align: center;
+  width: 720px;
+  font-family: "Stem bold";
+  font-size: 64px;
+  color: #000000;
+  line-height: 68px;
+  font-weight: 700;
+  font-style: normal;
+}
+main .fourth_section .forth_tetxs .advantages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+main .fourth_section .forth_tetxs .advantages .advantages_items {
+  width: 255px;
+  margin-left: 30px;
+  height: 212px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .fourth_section .forth_tetxs .advantages .advantages_items .round {
+  box-shadow: 0px 0px 15px #000000;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+main .fourth_section .forth_tetxs .advantages .advantages_items .round img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+}
+main .fourth_section .forth_tetxs .advantages .advantages_items h3 {
+  font-family: "Stem medium";
+  font-size: 28px;
+  color: #000000;
+  line-height: 36.4px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .fourth_section .forth_tetxs .advantages .advantages_items em {
+  text-align: center;
+  font-style: normal;
+  opacity: 0.4;
+  font-family: "Stem bold";
+  font-size: 18px;
+  color: #000000;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+}
+main .fifth_section {
+  position: relative;
+  width: 100%;
+  height: 1308px;
+  background-color: #00BDF8;
+}
+main .fifth_section .fifth_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 77.1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+main .fifth_section .fifth_content strong {
+  text-align: center;
+  font-family: "Stem medium";
+  font-size: 28px;
+  color: #FFFFFF;
+  line-height: 36.4px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .fifth_section .fifth_content h2 {
+  text-align: center;
+  font-family: "Stem bold";
+  font-size: 64px;
+  color: #FFFFFF;
+  line-height: 68px;
+  font-weight: 700;
+  font-style: normal;
+}
+main .fifth_section .fifth_content .subtitle {
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: "Stem medium";
+  font-size: 24px;
+  color: #FFFFFF;
+  line-height: 31px;
+  font-weight: 400;
+  font-style: normal;
+}
+main .fifth_section .fifth_content .catigories {
+  width: inherit;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+main .fifth_section .fifth_content .catigories .category {
+  position: relative;
+  margin-bottom: 30px;
+  width: 32%;
+  height: 380px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+main .fifth_section .fifth_content .catigories .category::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #000000;
+  opacity: 0.4;
+}
+main .fifth_section .fifth_content .catigories .category h3 {
+  z-index: 3;
+  position: static;
+  font-family: "Stem medium";
+  font-size: 28px;
+  color: #FFFFFF;
+  line-height: 36.4px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .fifth_section .fifth_content .catigories .category p {
+  z-index: 3;
+  position: static;
+  font-family: "Stem bold";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 32px;
+}
+main .fifth_section .fifth_content .catigories .clean {
+  background-image: url(../img/1.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+main .fifth_section .fifth_content .catigories .clean::before {
+  content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 2;
+  border-radius: 16px;
+  font-family: "Stem medium";
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
+}
+main .fifth_section .fifth_content .catigories .clean:hover::before {
+  top: 50%;
+}
+main .fifth_section .fifth_content .catigories .plomb {
+  background-image: url(../img/2.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+main .fifth_section .fifth_content .catigories .plomb::before {
+  content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 2;
+  border-radius: 16px;
+  font-family: "Stem medium";
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
+}
+main .fifth_section .fifth_content .catigories .plomb:hover::before {
+  top: 50%;
+}
+main .fifth_section .fifth_content .catigories .implant {
+  overflow: hidden;
+  background-image: url(../img/3.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .fifth_section .fifth_content .catigories .implant::before {
+  content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 2;
+  border-radius: 16px;
+  font-family: "Stem medium";
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
+}
+main .fifth_section .fifth_content .catigories .implant:hover::before {
+  top: 50%;
+}
+main .fifth_section .fifth_content .catigories .bridge {
+  overflow: hidden;
+  background-image: url(../img/4.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .fifth_section .fifth_content .catigories .bridge::before {
+  content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 2;
+  border-radius: 16px;
+  font-family: "Stem medium";
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
+}
+main .fifth_section .fifth_content .catigories .bridge:hover::before {
+  top: 50%;
+}
+main .fifth_section .fifth_content .catigories .protect {
+  overflow: hidden;
+  background-image: url(../img/5.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .fifth_section .fifth_content .catigories .protect::before {
+  content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 2;
+  border-radius: 16px;
+  font-family: "Stem medium";
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
+}
+main .fifth_section .fifth_content .catigories .protect:hover::before {
+  top: 50%;
+}
+main .fifth_section .fifth_content .catigories .hard {
+  overflow: hidden;
+  background-image: url(../img/6.jfif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .fifth_section .fifth_content .catigories .hard::before {
+  content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+  padding: 20px;
+  z-index: 2;
+  border-radius: 16px;
+  font-family: "Stem medium";
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  opacity: 1;
+}
+main .fifth_section .fifth_content .catigories .hard:hover::before {
+  top: 50%;
+}
+main .sixth_section {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  background-color: #f9f9f9;
+}
+main .sixth_section .stomatology {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 77.1%;
+  height: 810px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+main .sixth_section .stomatology .items {
+  border-radius: 24px;
+  position: relative;
+}
+main .sixth_section .stomatology .items::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.2;
+  border-radius: 24px;
+}
+main .sixth_section .stomatology .item1 {
+  background-image: url(../img/7.jfif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+main .sixth_section .stomatology .item2 {
+  background-image: url(../img/8.jfif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .sixth_section .stomatology .item3 {
+  background-image: url(../img/9.jfif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+main .seventh_section {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  background-image: url(../img/bg7.jfif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .seventh_section .back_drop_img3 {
+  position: absolute;
+  width: 100%;
+  height: 900px;
+  background-color: rgba(26, 35, 110, 0.5019607843);
+}
+main .seventh_section .form_contaiter {
+  width: 540px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .seventh_section .form_contaiter .sibtitles {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .seventh_section .form_contaiter .sibtitles h2 {
+  text-align: center;
+  font-family: "Stem bold";
+  font-size: 48px;
+  color: #FFFFFF;
+  line-height: 52px;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 16px;
+}
+main .seventh_section .form_contaiter .sibtitles p {
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .seventh_section .form_contaiter form .inputs {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+main .seventh_section .form_contaiter form .inputs input {
+  border: none;
+  outline: none;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 56px;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #00BDF8;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .seventh_section .form_contaiter form p {
+  font-family: "Stem medium";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+main .seventh_section .form_contaiter form .radio_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+main .seventh_section .form_contaiter form .send {
+  width: 100%;
+  margin-bottom: 24px;
+}
+main .seventh_section .form_contaiter form .disc {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  text-align: center;
+  font-family: "Stem bold";
+  font-size: 13px;
+  color: #FFFFFF;
+  line-height: 18px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@media screen and (max-width: 1440px) {
+  main .main_section .main_content .main_text h1 {
+    text-align: center;
+    font-size: 54px;
+  }
+}
+@media screen and (max-width: 1380px) {
+  main .fourth_section {
+    height: 810px;
+  }
+  main .fourth_section .forth_tetxs {
+    height: 630px;
+  }
+  main .fourth_section .forth_tetxs h2 {
+    margin-bottom: 26px;
+  }
+  main .fourth_section .forth_tetxs .advantages .advantages_items {
+    width: 350px;
+    margin-bottom: 50px;
+  }
+  main .fourth_section .advantages {
+    flex-wrap: wrap;
+  }
+  main .fifth_section {
+    height: 1120px;
+  }
+  main .fifth_section .fifth_content .catigories {
+    width: 100%;
+  }
+  main .fifth_section .fifth_content h2 {
+    font-size: 52px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  main .third_section .about_text .about_title {
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 1140px) {
+  main .fifth_section {
+    height: 1500px;
+  }
+  main .fifth_section .fifth_content .catigories {
+    width: 100%;
+  }
+  main .fifth_section .fifth_content .catigories .category {
+    width: 350px;
+  }
+  main .fifth_section .fifth_content h2 {
+    font-size: 42px;
+  }
+  main .fifth_section .fifth_content .subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  main .main_section .main_content {
+    width: 80%;
+  }
+  main .main_section .main_content .main_text h1 {
+    text-align: center;
+    font-size: 48px;
+  }
+  main .main_section .main_content .main_text p {
+    font-size: 24px;
+  }
+  main .third_section .about_text {
+    width: 70%;
+  }
+  main .third_section .about_text .about_title {
+    font-size: 36px;
+  }
+  main .fourth_section .forth_tetxs h2 {
+    margin-bottom: 16px;
+    font-size: 36px;
+  }
+  main .fourth_section .forth_tetxs .advantages .advantages_items {
+    width: 300px;
+    margin-left: 0;
+    margin-bottom: 25px;
+  }
+  main .fourth_section .advantages {
+    flex-wrap: wrap;
+  }
+  main .fifth_section {
+    height: 2780px;
+  }
+  main .fifth_section .fifth_content .catigories {
+    width: 100%;
+  }
+  main .fifth_section .fifth_content .catigories .category {
+    width: 100%;
+  }
+  main .fifth_section .fifth_content .catigories .clean::after {
+    font-size: 16px;
+  }
+  main .fifth_section .fifth_content h2 {
+    font-size: 36px;
+  }
+  main .fifth_section .fifth_content .subtitle {
+    font-size: 18px;
+  }
+  main .sixth_section {
+    height: 768px;
+  }
+  main .sixth_section .stomatology {
+    height: 498px;
+  }
+}
+@media screen and (max-width: 820px) {
+  main .fourth_section .forth_tetxs h2 {
+    margin-bottom: 14px;
+    font-size: 42px;
+    width: 100%;
+  }
+  main .fourth_section .forth_tetxs strong {
+    font-size: 20px;
+  }
+  main .fourth_section .forth_tetxs .advantages .advantages_items {
+    width: 250px;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  main .fourth_section .advantages {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .third_section .about_text {
+    width: 80%;
+  }
+  main .third_section .about_text .about_title {
+    font-size: 36px;
+  }
+  main .third_section .about_text p {
+    margin-bottom: 26px;
+  }
+  main .fifth_section {
+    height: 2780px;
+  }
+  main .fifth_section .fifth_content h2 {
+    font-size: 32px;
+  }
+  main .fifth_section .fifth_content .subtitle {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 650px) {
+  main .main_section .main_content {
+    height: 500px;
+  }
+  main .main_section .main_content .main_text h1 {
+    text-align: center;
+    font-size: 48px;
+  }
+  main .main_section .main_content .main_buttons .buttons .btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  main .fourth_section {
+    height: 1200px;
+  }
+  main .fourth_section .forth_tetxs {
+    height: 1100px;
+  }
+  main .fourth_section .forth_tetxs h2 {
+    margin-bottom: 12px;
+    font-size: 36px;
+    width: 100%;
+  }
+  main .fourth_section .forth_tetxs strong {
+    font-size: 18px;
+  }
+  main .fourth_section .forth_tetxs .advantages {
+    justify-content: center;
+  }
+  main .fourth_section .forth_tetxs .advantages .advantages_items {
+    width: 300px;
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  main .fourth_section .advantages {
+    flex-wrap: wrap;
+  }
+  main .sixth_section {
+    height: 1200px;
+  }
+  main .sixth_section .stomatology {
+    width: 80%;
+    height: 1000px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+  }
+  main .sixth_section .stomatology .item1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+  main .sixth_section .stomatology .item2 {
+    grid-column: 1/3;
+    grid-row: 2/2;
+  }
+  main .sixth_section .stomatology .item3 {
+    grid-column: 1/3;
+    grid-row: 3/3;
+  }
+  main .seventh_section {
+    height: 740px;
+  }
+  main .seventh_section .back_drop_img3 {
+    height: 740px;
+  }
+  main .seventh_section .form_contaiter {
+    width: 90%;
+  }
+  main .seventh_section .form_contaiter .sibtitles h2 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 540px) {
+  main .third_section .about_text {
+    width: 80%;
+  }
+  main .third_section .about_text strong {
+    margin-bottom: 12px;
+  }
+  main .third_section .about_text .about_title {
+    font-size: 32px;
+  }
+  main .third_section .about_text p {
+    font-size: 16px;
+    margin-bottom: 22px;
+  }
+  main .fifth_section {
+    height: 2800px;
+  }
+  main .fifth_section .fifth_content strong {
+    font-size: 18px;
+  }
+  main .fifth_section .fifth_content .catigories {
+    width: 100%;
+  }
+  main .fifth_section .fifth_content .catigories .category {
+    width: 100%;
+  }
+  main .fifth_section .fifth_content .catigories .clean::after {
+    font-size: 16px;
+  }
+  main .fifth_section .fifth_content h2 {
+    font-size: 24px;
+  }
+  main .fifth_section .fifth_content .subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 464px) {
+  main .main_section .main_content {
+    height: 500px;
+  }
+  main .main_section .main_content .main_text h1 {
+    text-align: center;
+    font-size: 42px;
+  }
+  main .main_section .main_content .main_text p {
+    font-size: 18px;
+  }
+  main .main_section .main_content .main_buttons .buttons .btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  main .fourth_section {
+    height: 1250px;
+  }
+  main .fourth_section .forth_tetxs {
+    height: 1200px;
+  }
+}
+@media screen and (max-width: 420px) {
+  main .third_section .about_text {
+    width: 90%;
+  }
+  main .third_section .about_text strong {
+    margin-bottom: 8px;
+  }
+  main .third_section .about_text h2 {
+    margin-bottom: 0px;
+  }
+  main .third_section .about_text .about_title {
+    font-size: 28px;
+  }
+  main .third_section .about_text p {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  main .fourth_section .forth_tetxs h2 {
+    margin-bottom: 14px;
+    font-size: 28px;
+    width: 100%;
+  }
+  main .fourth_section .forth_tetxs strong {
+    font-size: 16px;
+  }
+  main .fourth_section .forth_tetxs .advantages .advantages_items {
+    width: 250px;
+    margin-left: 0;
+    margin-bottom: 36px;
+  }
+  main .fourth_section .advantages {
+    flex-wrap: wrap;
+  }
+  main .sixth_section {
+    height: 800px;
+  }
+  main .sixth_section .stomatology {
+    grid-auto-rows: 200px;
+    height: 700px;
+  }
+}
+@media screen and (max-width: 375px) {
+  main .main_section {
+    height: 600px;
+  }
+  main .main_section .main_content {
+    height: 500px;
+  }
+  main .main_section .main_content .main_text h1 {
+    text-align: center;
+    font-size: 28px;
+    line-height: 40px;
+  }
+  main .main_section .main_content .main_text p {
+    font-size: 16px;
+  }
+  main .main_section .main_content .main_buttons .buttons .btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  main .third_section .about_text {
+    width: 90%;
+  }
+  main .third_section .about_text strong {
+    margin-bottom: 4px;
+  }
+  main .third_section .about_text h2 {
+    margin-bottom: 0px;
+  }
+  main .third_section .about_text .about_title {
+    font-size: 24px;
+  }
+  main .third_section .about_text p {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  main .fourth_section {
+    height: 1300px;
+  }
+  main .fourth_section .forth_tetxs {
+    height: 1200px;
+  }
+  main .fourth_section .forth_tetxs h2 {
+    margin-bottom: 14px;
+    font-size: 24px;
+    line-height: 42px;
+    width: 100%;
+  }
+  main .fourth_section .forth_tetxs strong {
+    font-size: 16px;
+  }
+  main .fourth_section .forth_tetxs .advantages .advantages_items {
+    width: 250px;
+    margin-left: 0;
+    margin-bottom: 36px;
+  }
+  main .fourth_section .advantages {
+    flex-wrap: wrap;
+  }
+  main .fifth_section {
+    height: 2850px;
+  }
+  main .fifth_section .fifth_content .catigories .category h3 {
+    font-size: 24px;
+  }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 276px;
+}
+footer .footer_container {
+  height: 116px;
+  width: 32%;
+}
+footer .footer_container .link_containers {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+footer .footer_container .link_containers .links {
+  background-color: #00BDF8;
+  width: 56px;
+  height: 56px;
+  transition: 300ms ease-in;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+footer .footer_container .link_containers .links:hover {
+  background-color: #000000;
+}
+footer .footer_container .link_containers .links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+footer .footer_container .link_containers .socual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+footer .footer_container p {
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    height: 180px;
+  }
+  footer .footer_container {
+    height: 100px;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 390px) {
+  footer {
+    height: 120px;
+  }
+  footer .footer_container {
+    height: 100px;
+    width: 100%;
+  }
+  footer .footer_container .link_containers {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 2250px) {
+  header {
+    max-width: 2250px;
+    margin: auto;
+  }
+  main {
+    max-width: 2250px;
+    margin: auto;
+  }
+  footer {
+    max-width: 2250px;
+    margin: auto;
+  }
+}
+/* для элемента label связанного с .custom-radio */
+.custom-radio > span {
+  font-family: "Stem bold";
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio > span::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.custom-radio > input:not(:disabled):not(:checked) + span:hover::before {
+  border-color: #FFFFFF;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio > input:not(:disabled):active + span::before {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.custom-radio > input:focus + span::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio > input:focus:not(:checked) + span::before {
+  border-color: #FFFFFF;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio > input:checked + span::before {
+  border-color: #00BDF8;
+  background-color: #00BDF8;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio > input:disabled + span::before {
+  background-color: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */

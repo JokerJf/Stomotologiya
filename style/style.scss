@@ -1,0 +1,1188 @@
+@import "varibles";
+@import "menu";
+
+@font-face {
+    font-family: "Stem bold";
+    src: url(/fonts/EM-Stem/OTF/Stem-Bold.otf);
+}
+@font-face {
+    font-family: "Stem medium";
+    src: url(/fonts/EM-Stem/OTF/Stem-Medium.otf);
+}
+
+button {
+    background-color: $main2;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: none;
+    transition: 300ms ease-in;
+    @include ft(18px, $main, 24px, 500, "Stem medium");
+    &:hover {
+        background-color: $main;
+        border-radius: 6px;
+        border: none;
+
+        @include ft(18px, #1a236e, 24px, 500, "Stem medium");
+    }
+}
+.call_back {
+    padding: 12px 24px;
+    background-color: $main2;
+    @include ft(15px, $main, 20px, 500, "Stem medium");
+    border-radius: 6px;
+    border: none;
+    transition: all ease-in 300ms;
+    &:hover {
+        box-shadow: $main2 0px 0px 20px 2px;
+        background-color: $main2;
+        padding: 12px 24px !important;
+        @include ft(15px, $main, 20px, 500, "Stem medium");
+    }
+}
+.custom-radio > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+// header
+header {
+    width: 100%;
+    height: 100px;
+    background-color: $main;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    a img {
+        height: 70px;
+    }
+    .navbar {
+        width: 890px;
+        gap: 10px;
+        @include flex(space-between, center, row);
+        a {
+            @include ft(18px, $bl, 24px, 500, "Stem medium");
+            opacity: 0.7;
+            transition: all 300ms;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        span {
+            #phone {
+                opacity: 1;
+            }
+
+            @include flex(space-between, flex-end, column);
+            @include ft(15px, $bl, 20px, 500, "Stem medium");
+            strong {
+                @include ft(15px, $main2, 20px, 500, "Stem medium");
+            }
+        }
+    }
+}
+@media screen and (max-width: 1210px) {
+    header {
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width: 1130px) {
+    header {
+        .navbar {
+            width: 750px;
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    header {
+        .navbar {
+            display: none;
+        }
+    }
+    .hamburger-menu {
+        display: block;
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+}
+// main
+main {
+    width: 100%;
+
+    .main_section {
+        position: relative;
+        width: 100%;
+        height: 790px;
+        background-image: url(../img/image.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .arrow {
+            position: absolute;
+            top: 95%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            border: none;
+        }
+        .back_drop_img {
+            position: relative;
+            width: 100%;
+            height: inherit;
+            background-color: #1a236e80;
+        }
+        .main_content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 382px;
+            @include flex(space-between, center, column);
+            .main_text {
+                height: 222px;
+                @include flex(space-evenly, center, column);
+                h1 {
+                    @include ft(64px, $main, 68px, 700, "Stem bold");
+                }
+                p {
+                    text-align: center;
+                    @include ft(24px, $main, 31.2px, 500, "Stem medium");
+                }
+            }
+            .main_buttons {
+                @include flex(space-between, center, column);
+                .buttons {
+                    .blue_btn {
+                        margin-right: 16px;
+                    }
+                }
+                strong {
+                    text-align: center;
+                    @include ft(15px, $main, 20px, 500, "Stem medium");
+                }
+            }
+        }
+    }
+    .second_section {
+        background-color: $main;
+        width: 100%;
+        height: 50px;
+    }
+    .third_section {
+        position: relative;
+        width: 100%;
+        height: 584px;
+        background-image: url(../img/second.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        .back_drop_img2 {
+            position: relative;
+            width: 100%;
+            height: inherit;
+            background-color: #1a236e80;
+        }
+        .about_text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include flex(space-between, center, column);
+            strong {
+                text-align: center;
+                margin-bottom: 16px;
+                @include ft(18px, $main, 24px, 600, "Stem bold");
+            }
+            .about_title {
+                text-align: center;
+                @include ft(48px, $main, 52px, 700, "Stem bold");
+                margin-bottom: 16px;
+            }
+            p {
+                margin-bottom: 32px;
+                text-align: center;
+                @include ft(18px, $main, 24px, 400, "Stem medium");
+            }
+        }
+    }
+    .fourth_section {
+        width: 100%;
+        height: 712px;
+        position: relative;
+        .forth_tetxs {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 77.1%;
+            height: 472px;
+            @include flex(space-between, center, column);
+            strong {
+                @include ft(28px, $main2, 36.4px, 500, "Stem medium");
+            }
+            h2 {
+                text-align: center;
+                width: 720px;
+                @include ft(64px, $bl, 68px, 700, "Stem bold");
+            }
+            .advantages {
+                @include flex(space-between, center, row);
+                .advantages_items {
+                    width: 255px;
+                    margin-left: 30px;
+                    height: 212px;
+                    @include flex(space-between, center, column);
+                    .round {
+                        box-shadow: 0px 0px 15px $bl;
+                        position: relative;
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 50%;
+                        background-color: $main;
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 48px;
+                            height: 48px;
+                        }
+                    }
+                    h3 {
+                        @include ft(28px, $bl, 36.4px, 500, "Stem medium");
+                    }
+                    em {
+                        text-align: center;
+                        font-style: normal;
+                        opacity: 0.4;
+                        @include ft(18px, $bl, 24px, 700, "Stem bold");
+                    }
+                }
+                // width: 255px;
+                // height: 212px;
+            }
+        }
+    }
+    .fifth_section {
+        position: relative;
+        width: 100%;
+        height: 1308px;
+        background-color: $main2;
+        .fifth_content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 77.1%;
+            @include flex(space-between, center, column);
+            strong {
+                text-align: center;
+                @include ft(28px, $main, 36.4px, 500, "Stem medium");
+            }
+            h2 {
+                text-align: center;
+                @include ft(64px, $main, 68px, 700, "Stem bold");
+            }
+            .subtitle {
+                margin-bottom: 60px;
+                text-align: center;
+                @include ft(24px, $main, 31px, 400, "Stem medium");
+            }
+            .catigories {
+                width: inherit;
+                flex-wrap: wrap;
+
+                @include flex(space-between, center, row);
+                .category {
+                    position: relative;
+                    margin-bottom: 30px;
+                    width: 32%;
+                    height: 380px;
+
+                    border-radius: 16px;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 16px;
+                        background-color: $bl;
+                        opacity: 0.4;
+                    }
+                    @include flex(flex-end, center, column);
+                    h3 {
+                        z-index: 3;
+                        position: static;
+                        @include ft(28px, $main, 36.4px, 500, "Stem medium");
+                    }
+                    p {
+                        z-index: 3;
+                        position: static;
+                        @include ft(18px, $main, 24px, 700, "Stem bold");
+                        margin-bottom: 32px;
+                    }
+                }
+                .clean {
+                    background-image: url(../img/1.jfif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    overflow: hidden;
+                    &::before {
+                        content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+                        position: absolute;
+                        top: -50%;
+                        left: 0;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 500ms ease-in-out;
+                        transform: translateY(-50%);
+                        padding: 20px;
+                        z-index: 2;
+                        border-radius: 16px;
+                        @include ft(14px, $main, 24px, 400, "Stem medium");
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        top: 50%;
+                    }
+                }
+                .plomb {
+                    background-image: url(../img/2.jfif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    overflow: hidden;
+                    &::before {
+                        content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+                        position: absolute;
+                        top: -50%;
+                        left: 0;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 500ms ease-in-out;
+                        transform: translateY(-50%);
+                        padding: 20px;
+                        z-index: 2;
+                        border-radius: 16px;
+                        @include ft(14px, $main, 24px, 400, "Stem medium");
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        top: 50%;
+                    }
+                }
+                .implant {
+                    overflow: hidden;
+                    background-image: url(../img/3.jfif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    &::before {
+                        content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+                        position: absolute;
+                        top: -50%;
+                        left: 0;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 500ms ease-in-out;
+                        transform: translateY(-50%);
+                        padding: 20px;
+                        z-index: 2;
+                        border-radius: 16px;
+                        @include ft(14px, $main, 24px, 400, "Stem medium");
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        top: 50%;
+                    }
+                }
+                .bridge {
+                    overflow: hidden;
+                    background-image: url(../img/4.jfif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    &::before {
+                        content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+                        position: absolute;
+                        top: -50%;
+                        left: 0;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 500ms ease-in-out;
+                        transform: translateY(-50%);
+                        padding: 20px;
+                        z-index: 2;
+                        border-radius: 16px;
+                        @include ft(14px, $main, 24px, 400, "Stem medium");
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        top: 50%;
+                    }
+                }
+                .protect {
+                    overflow: hidden;
+                    background-image: url(../img/5.jfif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    &::before {
+                        content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+                        position: absolute;
+                        top: -50%;
+                        left: 0;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 500ms ease-in-out;
+                        transform: translateY(-50%);
+                        padding: 20px;
+                        z-index: 2;
+                        border-radius: 16px;
+                        @include ft(14px, $main, 24px, 400, "Stem medium");
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        top: 50%;
+                    }
+                }
+                .hard {
+                    overflow: hidden;
+                    background-image: url(../img/6.jfif);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    &::before {
+                        content: "Это эффективный способ сохранить здоровье и красоту вашей улыбки. Услуга включает удаление зубного налета и камня, полировку эмали и укрепление зубов. Регулярная чистка предотвращает развитие кариеса, воспаление десен и обеспечивает свежесть дыхания. Доверьте заботу о своих зубах профессионалам!";
+                        position: absolute;
+                        top: -50%;
+                        left: 0;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 500ms ease-in-out;
+                        transform: translateY(-50%);
+                        padding: 20px;
+                        z-index: 2;
+                        border-radius: 16px;
+                        @include ft(14px, $main, 24px, 400, "Stem medium");
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        top: 50%;
+                    }
+                }
+            }
+        }
+    }
+    .sixth_section {
+        position: relative;
+        width: 100%;
+        height: 1080px;
+        background-color: #f9f9f9;
+        .stomatology {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 77.1%;
+            height: 810px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            .items {
+                border-radius: 24px;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $bl;
+                    opacity: 0.2;
+                    border-radius: 24px;
+                }
+            }
+            .item1 {
+                background-image: url(../img/7.jfif);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                grid-column: 1/2;
+                grid-row: 1/3;
+            }
+            .item2 {
+                background-image: url(../img/8.jfif);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .item3 {
+                background-image: url(../img/9.jfif);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    .seventh_section {
+        position: relative;
+        width: 100%;
+        height: 900px;
+        background-image: url(../img/bg7.jfif);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .back_drop_img3 {
+            position: absolute;
+            width: 100%;
+            height: 900px;
+            background-color: #1a236e80;
+        }
+
+        .form_contaiter {
+            width: 540px;
+            height: 700px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include flex(center, center, column);
+            .sibtitles {
+                margin-bottom: 40px;
+                @include flex(center, center, column);
+                h2 {
+                    text-align: center;
+                    @include ft(48px, $main, 52px, 700, "Stem bold");
+                    margin-bottom: 16px;
+                }
+                p {
+                    @include ft(18px, $main, 24px, 500, "Stem medium");
+                }
+            }
+
+            form {
+                .inputs {
+                    margin-bottom: 24px;
+                    @include flex(center, flex-start, column);
+                    input {
+                        border: none;
+                        outline: none;
+                        background-color: $main;
+                        width: 100%;
+                        height: 56px;
+                        border-radius: 6px;
+                        padding: 16px 20px;
+                        margin-bottom: 8px;
+                        @include ft(18px, $main2, 24px, 500, "Stem medium");
+                    }
+                }
+                p {
+                    @include ft(18px, $main, 24px, 500, "Stem medium");
+                }
+                .radio_buttons {
+                    @include flex(center, flex-start, column);
+                    margin-bottom: 40px;
+                }
+                .send {
+                    width: 100%;
+                    margin-bottom: 24px;
+                }
+                .disc {
+                    margin: 0 auto;
+                    display: block;
+                    width: 90%;
+                    text-align: center;
+                    @include ft(13px, $main, 18px, 700, "Stem bold");
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    main {
+        .main_section {
+            .main_content {
+                .main_text {
+                    h1 {
+                        text-align: center;
+                        font-size: 54px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1380px) {
+    main {
+        .fourth_section {
+            height: 810px;
+            .forth_tetxs {
+                height: 630px;
+                h2 {
+                    margin-bottom: 26px;
+                }
+                .advantages {
+                    .advantages_items {
+                        width: 350px;
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+
+            .advantages {
+                flex-wrap: wrap;
+            }
+        }
+        .fifth_section {
+            height: 1120px;
+            .fifth_content {
+                .catigories {
+                    width: 100%;
+                }
+                h2 {
+                    font-size: 52px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1280px) {
+    main {
+        .third_section {
+            .about_text {
+                .about_title {
+                    font-size: 44px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1140px) {
+    main {
+        .fifth_section {
+            height: 1500px;
+            .fifth_content {
+                .catigories {
+                    width: 100%;
+                    .category {
+                        width: 350px;
+                    }
+                }
+                h2 {
+                    font-size: 42px;
+                }
+                .subtitle {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    main {
+        .main_section {
+            .main_content {
+                width: 80%;
+                .main_text {
+                    h1 {
+                        text-align: center;
+                        font-size: 48px;
+                    }
+                    p{
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+        .third_section {
+            .about_text {
+                width: 70%;
+                .about_title {
+                    font-size: 36px;
+                }
+            }
+        }
+        .fourth_section {
+            .forth_tetxs {
+                h2 {
+                    margin-bottom: 16px;
+                    font-size: 36px;
+                }
+                .advantages {
+                    .advantages_items {
+                        width: 300px;
+                        margin-left: 0;
+                        margin-bottom: 25px;
+                    }
+                }
+            }
+            .advantages {
+                flex-wrap: wrap;
+            }
+        }
+        .fifth_section {
+            height: 2780px;
+            .fifth_content {
+                .catigories {
+                    width: 100%;
+                    .category {
+                        width: 100%;
+                    }
+                    .clean {
+                        &::after {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                h2 {
+                    font-size: 36px;
+                }
+                .subtitle {
+                    font-size: 18px;
+                }
+            }
+        }
+        .sixth_section {
+            height: 768px;
+            .stomatology {
+                height: 498px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 820px) {
+    main {
+        .fourth_section {
+            .forth_tetxs {
+                h2 {
+                    margin-bottom: 14px;
+                    font-size: 42px;
+                    width: 100%;
+                }
+                strong {
+                    font-size: 20px;
+                }
+                .advantages {
+                    .advantages_items {
+                        width: 250px;
+                        margin-left: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .advantages {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        .third_section {
+            .about_text {
+                width: 80%;
+                .about_title {
+                    font-size: 36px;
+                }
+                p {
+                    margin-bottom: 26px;
+                }
+            }
+        }
+        .fifth_section {
+            height: 2780px;
+            .fifth_content {
+                h2 {
+                    font-size: 32px;
+                }
+                .subtitle {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    main {
+        .main_section {
+            .main_content {
+                height: 500px;
+                .main_text {
+                    h1 {
+                        text-align: center;
+                        font-size: 48px;
+                    }
+                }
+                .main_buttons{
+                    .buttons{
+                        .btn{
+                            margin-bottom: 20px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .fourth_section {
+            height: 1200px;
+            .forth_tetxs {
+                height: 1100px;
+                h2 {
+                    margin-bottom: 12px;
+                    font-size: 36px;
+                    width: 100%;
+                }
+                strong {
+                    font-size: 18px;
+                }
+                .advantages {
+                    justify-content: center;
+                    .advantages_items {
+                        width: 300px;
+                        margin-left: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .advantages {
+                flex-wrap: wrap;
+            }
+        }
+        .sixth_section {
+            height: 1200px;
+            .stomatology {
+                width: 80%;
+                height: 1000px;
+                grid-template-columns: 1fr;
+                grid-auto-rows: 300px;
+                .item1 {
+                    grid-column: 1/3;
+                    grid-row: 1/2;
+                }
+                .item2 {
+                    grid-column: 1/3;
+                    grid-row: 2/2;
+                }
+                .item3 {
+                    grid-column: 1/3;
+                    grid-row: 3/3;
+                }
+            }
+        }
+        .seventh_section {
+            height: 740px;
+            .back_drop_img3 {
+                height: 740px;
+            }
+            .form_contaiter {
+                width: 90%;
+                .sibtitles {
+                    h2 {
+                        font-size: 36px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    main {
+        .third_section {
+            .about_text {
+                width: 80%;
+                strong {
+                    margin-bottom: 12px;
+                }
+                .about_title {
+                    font-size: 32px;
+                }
+                p {
+                    font-size: 16px;
+                    margin-bottom: 22px;
+                }
+            }
+        }
+        .fifth_section {
+            height: 2800px;
+            .fifth_content {
+                strong {
+                    font-size: 18px;
+                }
+                .catigories {
+                    width: 100%;
+                    .category {
+                        width: 100%;
+                    }
+                    .clean {
+                        &::after {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                h2 {
+                    font-size: 24px;
+                }
+                .subtitle {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 464px) {
+    main {
+        .main_section {
+            .main_content {
+                height: 500px;
+                .main_text {
+                    h1 {
+                        text-align: center;
+                        font-size: 42px;
+                    }
+                    p{
+                        font-size: 18px;
+                    }
+                }
+                .main_buttons{
+                    .buttons{
+                        .btn{
+                            margin-bottom: 20px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .fourth_section {
+            height: 1250px;
+            .forth_tetxs {
+                height: 1200px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 420px) {
+    main {
+        .third_section {
+            .about_text {
+                width: 90%;
+                strong {
+                    margin-bottom: 8px;
+                }
+                h2 {
+                    margin-bottom: 0px;
+                }
+                .about_title {
+                    font-size: 28px;
+                }
+                p {
+                    font-size: 14px;
+                    margin-bottom: 18px;
+                }
+            }
+        }
+        .fourth_section {
+            .forth_tetxs {
+                h2 {
+                    margin-bottom: 14px;
+                    font-size: 28px;
+                    width: 100%;
+                }
+                strong {
+                    font-size: 16px;
+                }
+                .advantages {
+                    .advantages_items {
+                        width: 250px;
+                        margin-left: 0;
+                        margin-bottom: 36px;
+                    }
+                }
+            }
+            .advantages {
+                flex-wrap: wrap;
+            }
+        }
+        .sixth_section {
+            height: 800px;
+            .stomatology {
+                grid-auto-rows: 200px;
+                height: 700px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    main {
+        .main_section {
+            height: 600px;
+            .main_content {
+                height: 500px;
+                .main_text {
+                    h1 {
+                        text-align: center;
+                        font-size: 28px;
+                        line-height: 40px;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                }
+                .main_buttons{
+                    .buttons{
+                        .btn{
+                            margin-bottom: 20px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .third_section {
+            .about_text {
+                width: 90%;
+                strong {
+                    margin-bottom: 4px;
+                }
+                h2 {
+                    margin-bottom: 0px;
+                }
+                .about_title {
+                    font-size: 24px;
+                }
+                p {
+                    font-size: 14px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+        .fourth_section {
+            height: 1300px;
+            .forth_tetxs {
+                height: 1200px;
+                h2 {
+                    margin-bottom: 14px;
+                    font-size: 24px;
+                    line-height: 42px;
+                    width: 100%;
+                }
+                strong {
+                    font-size: 16px;
+                }
+                .advantages {
+                    .advantages_items {
+                        width: 250px;
+                        margin-left: 0;
+                        margin-bottom: 36px;
+                    }
+                }
+            }
+            .advantages {
+                flex-wrap: wrap;
+            }
+        }
+        .fifth_section {
+            height: 2850px;
+            .fifth_content {
+                .catigories {
+                    .category {
+                        h3 {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// footer
+footer {
+    @include flex(center, center, column);
+    width: 100%;
+    height: 276px;
+    .footer_container {
+        height: 116px;
+        width: 32%;
+        .link_containers {
+            @include flex(space-evenly, center, row);
+            margin-bottom: 40px;
+            .links {
+                background-color: $main2;
+                width: 56px;
+                height: 56px;
+                transition: 300ms ease-in;
+                border-radius: 50%;
+                @include flex(center, center, row);
+                &:hover {
+                    background-color: $bl;
+                }
+                a {
+                    @include flex(center, center, row);
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .socual {
+                @include flex(center, center, row);
+            }
+        }
+        p {
+            text-align: center;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    footer {
+        height: 180px;
+        .footer_container {
+            height: 100px;
+            width: 90%;
+        }
+    }
+}
+@media screen and (max-width: 390px) {
+    footer {
+        height: 120px;
+        .footer_container {
+            height: 100px;
+            width: 100%;
+            .link_containers {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+// media for big screen
+@media screen and (min-width: 2250px) {
+    header {
+        max-width: 2250px;
+        margin: auto;
+    }
+    main {
+        max-width: 2250px;
+        margin: auto;
+    }
+    footer {
+        max-width: 2250px;
+        margin: auto;
+    }
+}
+
+@import "radio";
